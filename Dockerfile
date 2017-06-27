@@ -27,8 +27,9 @@ RUN cd /usr/local/src/opencv && \
     make -j"$(nproc)" && \
     make install && \
     ldconfig
-    
+
 #install dlib
+RUN yum -y install wget
 RUN apt-get update &&\
     apt-get install -y --no-install-recommends python libboost-dev cmake
 RUN cd /usr/local/src  &&\
